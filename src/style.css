@@ -1,0 +1,592 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,body{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  }
+  
+  
+  /* body {
+  height: 200vh; 
+  margin: 0;
+  } */
+  #canvas-container {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: fixed; /* Keeps the canvas fixed in place */
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute; /* Ensure it's positioned */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Set behind text if needed */
+  }
+  
+  #nav{
+  height: 80px;
+  width: 100%;
+  background-color: #0a0402b6;
+  display: flex;
+  align-items: center;
+  position: fixed; /* Keep the navbar fixed at the top */
+  top: 0; /* Position it at the top of the viewport */
+  left: 0;
+  z-index: 10; /* Ensure it's above the canvas */
+  }
+  
+  #nav-content{
+  height: 48px;
+  width: 100%;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+  
+  #img{
+  height: 40px;
+  width: 40px;
+  /* background-color: yellow; */
+  object-fit: cover;
+  margin-left: 40px;
+  }
+  
+  #img img{
+  width: 100%;
+  height: 100%;
+  }
+  
+  #nav-content-right{
+  width: 134px;
+  height: 48px;
+  background-color: orange;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  }
+  
+  #nav-content-right h4{
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  }
+  
+  /* Main Content */
+#main {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    position: relative; /* Keeps it in flow */
+    /* background-color: red; */
+    z-index: 2;
+  }
+  
+  #main-heading {
+  width: 100%;
+  /* Remove the fixed height of 50px */
+  min-height: 30px; /* Or adjust as needed */
+  /* padding-top: 200px; */
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  }
+  
+  
+  #main-heading1{
+  width: 165px;
+  height: 100%;
+  /* background-color: blue; */
+  } 
+  
+  #main-heading1 h1{
+    font-size: 32px;
+    font-weight: 600;
+    color:white
+  }
+  
+  #main-heading-img{
+    width: 36px;
+    height: 36px;
+    /* background-color: red; */
+    object-fit: cover;
+  }
+  
+  #main-heading-img img{
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  #main-heading2{
+    height: 36px;
+    width: 80px;
+    /* background-color: blue; */
+  }
+  
+  #main-heading2 h1{
+    font-size: 32px;
+    font-weight: 600;
+    color:white
+  }
+
+  #main2{
+    width: 100%;
+    height: 120px;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #main2-part1{
+    width: 300px;
+    height: 120px;
+    /* background-color: green; */
+    text-align: center;
+  }
+
+  #main2-part1 h1{
+    font-size: 94px;
+    font-weight: 600;
+    color: rgb(255, 115, 0);
+  }
+
+  #main2-part2{
+    width: 400px;
+    height: 120px;
+    /* background-color: pink; */
+  }
+
+  #main2-part2 h1{
+    font-size: 94px;
+    font-weight: 600;
+    color: white;
+  }
+
+  #main3{
+    width: 100%;
+    height: 120px;
+    /* background-color: blue; */
+    text-align: center;
+  }
+
+  #main3 h1{
+    font-size: 104px;
+    font-weight: 600;
+    color: white;
+  }
+
+#para{
+    width: 100%;
+    height: 67px;
+    /* background-color: yellow; */
+    text-align: center;
+}
+
+  #para p{
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+  }
+
+  #main4 {
+   width: 100%;
+    height: 158px;
+    text-align: center;
+    /* background-color: red; */
+    position: relative;
+    padding-top: 350px;
+    z-index: 2; /* Place it above the canvas */
+  }
+
+  #main4 h1{
+    font-size: 65px;
+    font-weight: 600;
+    color: white;
+  }
+
+  #main4 h1 span {
+    color: orange;
+  }
+
+  #main5{
+    height: 158px;
+    width: 100%;
+    /* background-color: red; */
+    position: relative;  /* Or absolute, depending on your layout */
+    z-index: 5;  /* Ensure it's above canvas */
+    padding-top: 400px;
+    text-align: center;
+  }
+
+  #main5 h1{
+    font-size: 65px;
+    font-weight: 600;
+    color: white;
+  }
+
+  #main5 h1 span {
+    color: orange;
+  }
+
+  #video {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    /* background-color: red; Optional: For visual debugging */
+    position: relative;
+    z-index: 5;
+    margin-top: 400px;
+}
+
+#video video {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Ensures the video fills the container while maintaining its aspect ratio */
+    border-radius: 50px;
+  }
+
+  #main6{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    
+  }
+
+  #main6-left{
+    width: 50%;
+    height: 100%;
+    /* background-color: blue; */
+    object-fit: cover;
+}
+
+#main6-left img{
+    width: 500px;
+    height: 479px;
+    padding-top: 100px;
+  }
+
+  #cards{
+    width: 50%;
+    height: 100%;
+    /* background-color: green; */
+    padding: 10px;
+    text-align: center;
+    overflow-y: auto; /* Adds vertical scrollbar when content overflows */
+    max-height: 100%; /* Ensures the container doesn't grow beyond the available space */
+  }
+  
+/* Hide scrollbar but keep the ability to scroll */
+#cards::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit browsers (Chrome, Safari, etc.) */
+  }
+  
+  #cards {
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+  }
+
+  /* Hide card2 and card3 initially */
+  #card2, #card3 {
+    display: none;
+  }
+  
+  /* Show card2 and card3 on a certain condition (optional, if you want them to appear later) */
+  #cards:hover #card2, #cards:hover #card3 {
+    display: block;
+    /* background-color: yellow; Optional: Change the style for visual clarity */
+    padding: 20px; /* Optional padding for better layout */
+  }
+
+  #card1{
+    width: 90%;
+    height: 100%;
+    /* background-color: yellow; */
+    padding-top: 150px;
+  }
+
+  #card1 h1{
+    font-size: 62px;
+    font-weight: 600;
+    color: white;
+  }
+
+  #card1 p{
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+  }
+
+  #card2{
+    width: 90%;
+    height: 100%;
+    /* background-color: yellow; */
+    padding-top: 150px;
+  }
+
+  #card2 h1{
+    font-size: 62px;
+    font-weight: 600;
+    color: white;
+  }
+
+  #card2 p{
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+  }
+
+  #card3{
+    width: 90%;
+    height: 100%;
+    /* background-color: yellow; */
+    padding-top: 150px;
+  }
+
+  #card3 h1{
+    font-size: 62px;
+    font-weight: 600;
+    color: white;
+  }
+
+  #card3 p{
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+  }
+
+#main7{
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    position: relative;
+    z-index: 5;
+    background-image: url('./Ring-scan-bg-min-p-500.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* This ensures the image covers the full width and height */
+  background-position: center center; /* Optionally, ensure the image is centered */
+    border-radius: 50px;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+#main7 h1{
+    font-size: 94px;
+    font-weight: 600;
+    color: white;
+}
+
+#main7 p{
+    font-size: 24px;
+    font-size: 300;
+    color: white;
+}
+
+#main8{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#main8 h1{
+font-size: 75px;
+color: white;
+}
+
+#main8 span{
+    color: orange;
+}
+
+#main8 p{
+    font-size: 20px;
+    color: white;
+    font-weight: 300;
+}
+
+#main9{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main9-img{
+    height: 90%;
+    width: 90%;
+    /* background-color: green; */
+    padding: 10px;
+    object-fit: cover;
+}
+
+#main9-img img{
+    border-radius: 50px;
+    height: 100%;
+    width: 100%;
+
+}
+
+#main10{
+    height: 250px;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
+#main10 h1{
+font-size: 74px;
+font-weight: 600;
+color: white;
+}
+
+#main10 h1 span{
+    color: orange;
+}
+
+#main10 p{
+    font-size: 21px;
+    font-weight: 500;
+    color: white;
+}
+
+#main11{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#main11-img{
+    height: 80%;
+    width: 85%;
+    /* background-color: yellow; */
+    object-fit: cover;
+}
+
+#main11-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+#main11-txt{
+    height: 50px;
+    width: 100%;
+    /* background-color: yellow; */
+    text-align: center;
+}
+
+#main11-txt h1{
+   font-size: 20px; 
+   font-weight: 600;
+   color: orange;
+}
+
+#main12{
+    height: 90%;
+    width: 100%;
+    background-color: red;
+    position: relative;
+    z-index: 5;
+    display: flex;    
+}
+
+#main12-part1{
+    width: 50%;
+    height: 100%;
+    background-color: #131313;
+    padding: 10px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+#main12-part1 #left{
+    height: 100%;
+    width: 100%;
+    /* background-color: green; */
+    padding: 20px;
+    padding-top: 40px;
+}
+
+#main12-part1 #left h1{
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+}
+
+#main12-part1 #left h4{
+    font-size: 24px;
+    font-weight: 200;
+    color: #808080;
+    padding-bottom: 30px;
+}
+
+#right{
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+    background-image: url(./93b7d507-poster-00001.jpg);
+    text-align: center;
+    padding-top: 40px;
+}
+
+#right h2{
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+}
+
+#right h1{
+    font-size: 100px;
+    font-weight: 600;
+    color: white;
+}
+
+#right h4{
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+}
+
+#right h3{
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    padding-top: 40px;
+}
